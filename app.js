@@ -17,7 +17,7 @@ var indexRouter = require('./routes/index');
 var app = express();
 app.use(flash());
 //mongoDB setup
-mongoose.connect('mongodb+srv://flaws:webd247@flaws@cluster0-huyyo.mongodb.net/test?retryWrites=true', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://flaws:<password>@cluster0-huyyo.mongodb.net/test?retryWrites=true', {useNewUrlParser: true});
 
 // view engine setup
 app.use(express.static(__dirname + "/public"));
