@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flaws</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Favicons
+    ================================================== -->
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css"  href="stylesheets/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/fonts/font-awesome/css/font-awesome.css">
+
+<!-- Slider
+    ================================================== -->
+<link href="stylesheets/css/owl.carousel.css" rel="stylesheet" media="screen">
+<link href="stylesheets/css/owl.theme.css" rel="stylesheet" media="screen">
+
+<!-- Stylesheet
+    ================================================== -->
+<link rel="stylesheet" type="text/css"  href="stylesheets/css/style.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/css/animate.min.css">
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="javascripts/js/modernizr.custom.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div id="preloader">
+  <div id="status"> <img src="img/preloader.gif" height="64" width="64" alt=""> </div>
+</div>
+<!-- Navigation
+    ==========================================-->
+<nav id="menu" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="/"><i class="fa fa-flag-checkered fa-flip-horizontal"></i> Flaws<strong></strong></a> </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#home" class="page-scroll">Home</a></li>
+        <li><a href="#services-section" class="page-scroll">Services</a></li>
+        <li><a href="#works-section" class="page-scroll">Portfolio</a></li>
+        <li><a href="#about-section" class="page-scroll">About</a></li>
+        <li><a href="#team-section" class="page-scroll">Social</a></li>
+        <li><a href="#testimonials-section" class="page-scroll">Testimonials</a></li>
+        <li><a href="#contact-section" class="page-scroll">Contact</a></li>
+        <% if(!currentUser) { %>
+        <li><a href="/login" class="page-scroll">Login</a></li>
+        <li><a href="/register" class="page-scroll">Register</a></li>
+        <%  } else { %>
+        <li><a href="/" class="page-scroll"><%=currentUser.fullname %></a></li>
+        <li><a href="/logout" class="page-scroll">Logout</a></li>
+        <%  } %>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header class="text-center" name="home">
+  <div class="intro-text">
+    <h1 class="wow fadeInDown">Let Yourself be F<strong><span class="color">LAW</span></strong>ED</h1>
+    <p class="wow fadeInDown">Take your stand.</p>
+    <a href="#works-section" class="btn btn-default btn-lg page-scroll wow fadeInUp" data-wow-delay="200ms">Our Portfolio</a> </div>
+</header>
+
+<!-- Services Section -->
+<div id="services-section" class="text-center">
+  <div class="container">
+    <div class="section-title wow fadeInDown">
+      <h2>Our <strong>Services</strong></h2>
+      <hr>
+      <div class="clearfix"></div>
+      <p>We specialize in creating powerful digital experiences that connect brands with customers</p>
+    </div>
+    <div class="space"></div>
+    <div class="row">
+      <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="200ms"> <i class="fa fa-desktop"></i>
+        <h4><strong>Web design</strong></h4>
+        <p>We understand that the art and science of web designing is all about pulling customers to your website and converting them to buy your product or services</p>
+      </div>
+      <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="400ms"> <i class="fa fa-gears"></i>
+        <h4><strong>App Development</strong></h4>
+        <p>We help our clients by converting their creativity into innovation via making Apps that has a WOW!! Effect.</p>
+      </div>
+      <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="600ms"> <i class="fa fa-bullhorn"></i>
+        <h4><strong>Marketing</strong></h4>
+        <p>SEO is an art form, raising brand awareness and in turn, mounting traffic to your website. There are many promising approaches you can take and identify your target market is key.</p>
+      </div>
+      <div class="col-md-3 col-sm-6 service wow fadeInUp" data-wow-delay="800ms"> <i class="fa fa-rocket"></i>
+        <h4><strong>Branding</strong></h4>
+        <p>What makes a best branding agency? We provide full service branding, and design services together with company naming, logo, business cards, brochures, and more..</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="cta"  class="text-center">
+  <div class="container">
+    <div class="section-title wow fadeInDown">
+      <h1><strong>Subscribe our channel</strong></h1>
+
+	  <script src="https://apis.google.com/js/platform.js"></script>
+	<div>
+	<div class="btn btn-lg page-scroll wow fadeInUp g-ytsubscribe" data-wow-delay="200ms" data-channel="GoogleDevelopers" data-layout="default" data-count="default">
+	</div>
+
+	</div>
+    </div>
+  </div>
+</div>
+
+<!-- Portfolio Section -->
+<div id="works-section" class="text-center">
+  <div class="container"> <!-- Container -->
+    <div class="section-title wow fadeInDown">
+      <h2>Our <strong>Content</strong></h2>
+      <hr>
+      <div class="clearfix"></div>
+      <p>Makes you say <strong>wow</strong>.</p>
+    </div>
+    <div class="row">
+      <div class="portfolio-items">
+        <div class="col-sm-6 col-md-4 col-lg-4 web">
+          <div class="portfolio-item wow fadeInUp" data-wow-delay="200ms">
+            <div class="hover-bg"> <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+              <div class="hover-text">
+                <h4>Eze Innovations</h4>
+                Web Design
+                <div class="clearfix"></div>
+                <i class="fa fa-plus"></i> </div>
+              <img src="img/portfolio/hotel.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-4 web">
+          <div class="portfolio-item wow fadeInUp" data-wow-delay="400ms">
+            <div class="hover-bg"> <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+              <div class="hover-text">
+                <h4>Mend Services</h4>
+               Web Design
+                <div class="clearfix"></div>
+                <i class="fa fa-plus"></i> </div>
+              <img src="img/portfolio/lighthouse.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4 web">
+          <div class="portfolio-item wow fadeInUp" data-wow-delay="600ms">
+            <div class="hover-bg"> <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+              <div class="hover-text">
+                <h4>Vardhman Enterprises</h4>
+                Web Design
+                <div class="clearfix"></div>
+                <i class="fa fa-plus"></i> </div>
+              <img src="img/portfolio/judah.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+		<div class="col-sm-6 col-md-4 col-lg-4 web">
+          <div class="portfolio-item wow fadeInUp" data-wow-delay="800ms">
+            <div class="hover-bg"> <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+              <div class="hover-text">
+                <h4>Eze Innovations</h4>
+                Web Design
+                <div class="clearfix"></div>
+                <i class="fa fa-plus"></i> </div>
+              <img src="img/portfolio/beetle.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4 col-lg-4 web">
+          <div class="portfolio-item wow fadeInUp" data-wow-delay="1000ms">
+            <div class="hover-bg"> <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+              <div class="hover-text">
+                <h4>Mend Services</h4>
+               Web Design
+                <div class="clearfix"></div>
+                <i class="fa fa-plus"></i> </div>
+              <img src="img/portfolio/coffee.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4 web">
+          <div class="portfolio-item wow fadeInUp" data-wow-delay="1200ms">
+            <div class="hover-bg"> <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+              <div class="hover-text">
+                <h4>Vardhman Enterprises</h4>
+                Web Design
+                <div class="clearfix"></div>
+                <i class="fa fa-plus"></i> </div>
+              <img src="img/portfolio/banjo-player.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- About Section -->
+<div id="about-section">
+  <div class="container">
+    <div class="section-title text-center wow fadeInDown">
+      <h2><strong>About</strong> us</h2>
+      <hr>
+      <div class="clearfix"></div>
+      <p>We hold ourselves to strict standards of quality and craftsmanship, which result in distinctive solutions that resonate with audiences</p>
+    </div>
+    <div class="row">
+      <div class="col-md-6 wow fadeInLeft"> <img src="img/about.png" class="img-responsive"> </div>
+      <div class="col-md-6 wow fadeInRight">
+          <h4>Who We Are</h4>
+          <p>Crenno is a specialized Web Design Company in Noida that offers complete customized solutions to help your business create optimum exposure in the web world and make your brand succeed in its relative fields. Our website development company is expert of providing high quality work and our skilled people's web designers, programmers and online internet marketing specialists will make your web presence more famous than ever before and assurance that your business churn a huge amount of revenues.</p>
+          <div class="space"></div>
+          <h4>What We Do</h4>
+          <p>Our constructive framework is agile and collaborative. We invite open dialogue and transparent communication throughout our structured step-by-step process.</p>
+          <div class="space"></div><div class="list-style">
+            <div class="row">
+              <div class="col-lg-6 col-sm-6 col-xs-12">
+                <ul>
+                  <li>Web Design</li>
+                  <li>Web Development</li>
+                  <li>Responsive/Mobile</li>
+                  <li>Ecommerce</li>
+                </ul>
+              </div>
+              <div class="col-lg-6 col-sm-6 col-xs-12">
+                <ul>
+                  <li>Graphic Design</li>
+                  <li>Seo Optimization</li>
+                  <li>Monthly Support</li>
+                  <li>Social Media Marketing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Team Section -->
+<div id="team-section" class="text-center">
+  <div class="container">
+    <div class="section-title wow fadeInDown">
+      <h2>Visit us on <strong><a class="fb page-scroll wow" style="color:#337ab7;" href="https://www.facebook.com/getinmile/?ref=settings">Facebook</a></strong></h2>
+      <hr>
+      <div class="clearfix"></div>
+
+    </div>
+  </div>
+ </div>
+<!-- Testimonials Section -->
+<div id="testimonials-section" class="text-center">
+  <div class="container">
+    <div class="section-title wow fadeInDown">
+      <h2>What our <strong>Clients</strong> say</h2>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div id="testimonial" class="owl-carousel owl-theme wow fadeInUp" data-wow-delay="200ms">
+          <div class="item">
+            <p>The Crenno team have been very supportive, helpful and open to our suggestions. Purely the have converted our creativity into an innovation via nice modern looking website which all of our customer like using</p>
+            <p><strong>Tushar Gulati</strong>, CEO, EzeInnovations.</p>
+          </div>
+          <div class="item">
+            <p>Crenno have done a wonderful job with our website. It is clear, colorful, and very professional. Even better is the services we receive when we need something updated. Updates are made quickly and efficiently. My experience with your company thus far has been great."</p>
+            <p><strong>Sarthak Arora</strong>, COO, Mend Services.</p>
+          </div>
+          <div class="item">
+            <p>It was great working with Crenno and my new website has received very positive reviews. Matrix Web Studio would always respond very quickly to any of my questions or comments. The site was completed exactly as planned. Sambhav was a pleasure to deal with and I would highly recommend.</p>
+            <p><strong>Saurabh Jain</strong>, CEO, Vardhman Enterprises.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div id="contact-section" class="text-center">
+  <div class="container">
+    <div class="section-title wow fadeInDown">
+      <h2><strong>Contact</strong> us</h2>
+      <hr>
+      <p>For any queries don't hesitate to contact us anytime.We are eager to help :)</p>
+    </div>
+    <div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-delay="200ms">
+      <div class="col-md-4"> <i class="fa fa-map-marker fa-2x"></i>
+        <p>A-10,Sector-62,JIIT<br>
+          Noida, 201301</p>
+      </div>
+      <div class="col-md-4"> <i class="fa fa-envelope-o fa-2x"></i>
+        <p>contactus@flaws.co.in</p>
+      </div>
+      <div class="col-md-4"> <i class="fa fa-phone fa-2x"></i>
+        <p> 91-9650750964</p>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-delay="400ms">
+	<h3>Leave us a message</h3>
+      <form name="sentMessage" id="contactForm" novalidate>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" id="name" class="form-control" placeholder="Name" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
+          <p class="help-block text-danger"></p>
+        </div>
+        <div id="success"></div>
+        <button type="submit" class="btn btn-default">Send Message</button>
+      </form>
+      <div class="social">
+        <ul>
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+          <li><a href="#"><i class="fa fa-github"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer">
+  <div class="container">
+      <p>2019 Copyright © Flaws | All Rights Reserved.</p>
+  </div>
+</div>
+
+
+
+<!-- Portfolio Modals -->
+<!-- Use the modals below to showcase details about your portfolio projects! -->
+
+<!-- Portfolio Modal 1 -->
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <div class="close-modal" data-dismiss="modal">
+      <div class="lr">
+        <div class="rl"> </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="modal-body">
+            <!-- Project Details Go Here -->
+            <h2>Eze Innovations</h2>
+            <p class="item-intro">Evoke the innovator in you.</p>
+            <img class="img-responsive img-centered" src="img/portfolio/modals/m-banjo-player.jpg" alt="">
+            <p>EZe Innovations is a Product Innovation Firm.Front End is purely HTML,CSS,Javascript ,made on Ruby on Rails.It has essence of innovation in it which is required.</p>
+            <ul class="list-inline">
+              <li><strong>Client</strong>: Tushar Gulati | CEO, EzeInnovations</li>
+              <li><strong>Category</strong>: Web Design</li>
+            </ul>
+			<button type="button" onClick="window.location='http://youtube.com'" class="btn btn-primary" style="background:red;"> View on youtube</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Portfolio Modal 2 -->
+<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <div class="close-modal" data-dismiss="modal">
+      <div class="lr">
+        <div class="rl"> </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="modal-body">
+            <!-- Project Details Go Here -->
+            <h2>Mend Services</h2>
+            <p class="item-intro">Online Platform providing comprehensive solutions for your vehivle problems.</p>
+            <img class="img-responsive img-centered" src="img/portfolio/modals/m-beetle.jpg" alt="">
+            <p>Minimalistic design followed by sequence of steps as per in a service provider website.Some features include
+            	Booking service ,fetching location and many more.Front end is on HTML,CSS,Javascript followed by Nodejs Backend.</p>
+            <ul class="list-inline">
+              <li><strong>Client</strong>: Mend Services</li>
+              <li><strong>Category</strong>: Web Design & Development</li>
+            </ul>
+			<button type="button" onClick="window.location='http://youtube.com'" target="blank" class="btn btn-primary" style="background:red;"> View on youtube</button>
+			<button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Portfolio Modal 3 -->
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-content">
+    <div class="close-modal" data-dismiss="modal">
+      <div class="lr">
+        <div class="rl"> </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div class="modal-body">
+            <!-- Project Details Go Here -->
+            <h2>Vardhman Enterprises</h2>
+            <p class="item-intro">Manufacturers and suppliers of School Belts, Ties, Badges, Sports Medals.</p>
+            <img class="img-responsive img-centered" src="img/portfolio//modals/m-girl.jpg" alt="">
+            <p>The website is very minimal and apt as per required for a manufacturer's and supplier's website.Front end consitutes Bootstrap,HTML,CSS,Javascript and Back end is on Django framework(Python)</p>
+            <ul class="list-inline">
+              <li><strong>Client</strong>: Saurabh Jain | CEO,Vardhman Enterprises</li>
+              <li><strong>Category</strong>: Web Design</li>
+            </ul>
+			<button type="button" onClick="window.location='http://youtube.com'" class="btn btn-primary" style="background:red;"> View on youtube</button>
+			<button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="javascripts/js/jquery.1.11.1.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script type="text/javascript" src="javascripts/js/bootstrap.js"></script>
+<script type="text/javascript" src="javascripts/js/SmoothScroll.js"></script>
+<script type="text/javascript" src="javascripts/js/wow.min.js"></script>
+<script type="text/javascript" src="javascripts/js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="javascripts/js/jquery.isotope.js"></script>
+<script type="text/javascript" src="javascripts/js/jqBootstrapValidation.js"></script>
+<script type="text/javascript" src="javascripts/js/contact_me.js"></script>
+<script type="text/javascript" src="javascripts/js/owl.carousel.js"></script>
+
+<!-- Javascripts
+    ================================================== -->
+<script type="text/javascript" src="javascripts/js/main.js"></script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5c39adc0361b3372892fc564/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>
