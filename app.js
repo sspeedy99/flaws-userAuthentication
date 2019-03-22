@@ -9,6 +9,7 @@ var User = require('./models/user.js');
 var passport = require('passport');
 var LocalStrategy = require('passport-local');
 var bodyParser = require('body-parser');
+const SendOtp = require('sendotp');
 
 
 var indexRouter = require('./routes/index');
@@ -23,6 +24,7 @@ mongoose.connect('mongodb+srv://flaws:webd247@flaws@cluster0-huyyo.mongodb.net/t
 app.use(express.static(__dirname + "/public"));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+const sendOtp = new SendOtp('261197Ai9ol1Yp0Qt5c57ef2f','Otp for your registration is {{otp}}, please do not share it with anybody');
 
 
 app.use(logger('dev'));
@@ -39,7 +41,7 @@ app.use(bodyParser.json());
 app.use(require('express-session')({
   secret:"letYourselfBeFlawed",
   resave:false,
-  saveUninitialized:false
+  saveUninitialized:true
 }));
 
 
