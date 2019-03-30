@@ -1,11 +1,12 @@
 
-body {
+ body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 300;
-    color: #888;
+    color: #1c424d;
     line-height: 30px;
     text-align: center;
+    background-color: #1c424d;
 }
 
 strong { font-weight: 500; }
@@ -83,6 +84,7 @@ img { max-width: 100%; }
 
 .inner-bg {
     padding: 100px 0 170px 0;
+
 }
 
 .top-content .text {

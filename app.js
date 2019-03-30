@@ -10,6 +10,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local');
 var bodyParser = require('body-parser');
 const SendOtp = require('sendotp');
+const methodOverride = require('method-override');
 
 
 var indexRouter = require('./routes/index');
@@ -18,13 +19,15 @@ var indexRouter = require('./routes/index');
 var app = express();
 app.use(flash());
 //mongoDB setup
-mongoose.connect('mongodb+srv://flaws:webd247@flaws@cluster0-huyyo.mongodb.net/test?retryWrites=true', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://flaws:webd247@flaws@cluster0-huyyo.mongodb.net/test?retryWrites=true', {
+  useNewUrlParser: true
+});
 
 // view engine setup
 app.use(express.static(__dirname + "/public"));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-const sendOtp = new SendOtp('261197Ai9ol1Yp0Qt5c57ef2f','Otp for your registration is {{otp}}, please do not share it with anybody');
+const sendOtp = new SendOtp('261197Ai9ol1Yp0Qt5c57ef2f', 'Otp for your registration is {{otp}}, please do not share it with anybody');
 
 
 app.use(logger('dev'));
@@ -35,13 +38,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(bodyParser.json());
+app.use(methodOverride('_method'));
 
 app.use(require('express-session')({
-  secret:"letYourselfBeFlawed",
-  resave:false,
-  saveUninitialized:true
+  secret: "letYourselfBeFlawed",
+  resave: false,
+  saveUninitialized: true
 }));
 
 
@@ -56,7 +62,7 @@ passport.deserializeUser(User.deserializeUser());
 
 passport.use(new LocalStrategy(User.authenticate()));
 
-app.use(function(req,res,next){
+app.use(function(req, res, next) {
   res.locals.error = req.flash("error");
   res.locals.success = req.flash("success");
   res.locals.currentUser = req.user; //req.user will be empty if no user is current signed in and useranme if signed in
