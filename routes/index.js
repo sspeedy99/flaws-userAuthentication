@@ -29,7 +29,7 @@ router.get('/users/:id/edit', function(req, res) {
 })
 
 router.put("/users/:id", function(req, res) {
-  // find and update the correct campground
+  // find and update the correct user details
   console.log(req.body)
   User.findByIdAndUpdate(req.params.id, {
     $set: {
@@ -149,7 +149,25 @@ router.post('/verify_changes', function(req, res) {
 /* Reset Password Routes */
 
 router.get('/reset_password', function(req, res) {
-  res.send("This will be the reset route")
+  res.render('reset_password');
+})
+
+router.post('/reset_password', function(req, res) {
+  User.findByUsername(req.body.username).then(function(sanitizedUser) {
+    if (sanitizedUser) {
+      sanitizedUser.setPassword(req.body.password, function() {
+        sanitizedUser.save();
+        console.log('Password Reset SuccessFully')
+        res.redirect('/login');
+      });
+    } else {
+      console.log('The User Does not exists')
+      res.redirect('/reset_password');
+    }
+  }, function(err) {
+    console.error(err);
+    res.redirect('/login');
+  })
 })
 
 /*GET logout request */
