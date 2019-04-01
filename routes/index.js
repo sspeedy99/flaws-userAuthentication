@@ -43,7 +43,7 @@ router.put("/users/:id", function(req, res) {
       //res.redirect("/users" + req.params.id);
     } else {
       //redirect somewhere(show page)
-
+      req.flash("success","Profile Updated SuccessFully")
       res.redirect("/")
     }
   });
@@ -65,6 +65,7 @@ router.post('/register', function(req, res) {
   }), req.body.password, function(err, user) {
     if (err) {
       console.log(err)
+      req.flash("error",err.message);
       res.redirect("/register");
     } else {
       passport.authenticate("local")(req, res, function() {
@@ -106,8 +107,9 @@ router.get('/login', function(req, res) {
 
 router.post("/login", passport.authenticate("local", {
   successRedirect: "/",
-  failureRedirect: "/login"
-}), function(req, res) {});
+  failureRedirect: "/login",
+  failureFlash: "Invalid username or password"}), function(req, res) {
+});
 
 
 /*Forget Password */
@@ -157,7 +159,7 @@ router.post('/reset_password', function(req, res) {
     if (sanitizedUser) {
       sanitizedUser.setPassword(req.body.password, function() {
         sanitizedUser.save();
-        console.log('Password Reset SuccessFully')
+        req.flash("success","Password changed SuccessFully")
         res.redirect('/login');
       });
     } else {
@@ -173,6 +175,7 @@ router.post('/reset_password', function(req, res) {
 /*GET logout request */
 router.get("/logout", function(req, res) {
   req.logout();
+  req.flash('success','SuccessFully Logged Out!')
   res.redirect('/');
 });
 

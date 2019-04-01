@@ -4,20 +4,17 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-var flash = require('connect-flash');
 var User = require('./models/user.js');
 var passport = require('passport');
 var LocalStrategy = require('passport-local');
 var bodyParser = require('body-parser');
 const SendOtp = require('sendotp');
 const methodOverride = require('method-override');
+var flash = require('connect-flash');
 
 
 var indexRouter = require('./routes/index');
-
-
 var app = express();
-app.use(flash());
 //mongoDB setup
 mongoose.connect('mongodb+srv://flaws:webd247@flaws@cluster0-huyyo.mongodb.net/test?retryWrites=true', {
   useNewUrlParser: true
@@ -43,7 +40,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.use(methodOverride('_method'));
-
+app.use(flash());
 app.use(require('express-session')({
   secret: "letYourselfBeFlawed",
   resave: false,
